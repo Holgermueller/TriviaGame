@@ -1,0 +1,23 @@
+.header {
+    width: 75%;
+    background-color: bisque;
+    text-align: center;
+    margin-left: 14%;
+    padding: 2px 0 2px;
+}
+
+.container {
+    width: 75%;
+    background-color: bisque;
+    text-align: center;
+    margin: 2% 0 0 14%;
+    padding: 5px 0 5px;
+}
+
+.footer {
+    width: 75%;
+    background-color: bisque;
+    text-align: center;
+    margin: 2% 0 0 14%;
+    padding: 2px 0 2px;
+}
