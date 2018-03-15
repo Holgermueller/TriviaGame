@@ -14,6 +14,18 @@
     padding: 5px 0 5px;
 }
 
+.begin {
+    padding: 4%;
+    border-radius: 50%;
+    margin: 2%;
+}
+
+.submit {
+    padding: 4%;
+    border-radius: 50%;
+    margin: 2%;
+}
+
 .footer {
     width: 75%;
     background-color: bisque;
