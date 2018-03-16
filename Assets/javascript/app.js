@@ -4,22 +4,29 @@ const quizBody = document.getElementById('quiz');
 const resultHolder = document.getElementById('results');
 const submitButton = document.getElementById('results');
 
-//function startButton();
-//function buildQuiz();
+//function loadQuiz();
 //function displayResults();
 
 //button to begin quiz
 
-//function clickToBegin();
-const begin = document.getElementById('begin');
 $('#begin').click(function() {
-    $('#quiz').text(`you've entered some text!`)
-});
+    $('#quiz').text(`you've entered some text!`); //test works!!
+    //$('#quiz').
+    //$('#timer').
+}); //end of click function
 
 //set up timer
 
-let timeRemaining = 120 + "seconds";
+let timeRemaining = 180;
+let gamerTimer = setInterval (function() {
+    timeRemaining--;
+    document.getElementById('#timer').textContent = timeRemaining;
+    if(timeRemaining <= 0)
+       $('#timer').html(`<p>You Lose</p>`)
+},1000);
+    $('#timer').html(timeRemaining);
 
+console.log(timeRemaining);
 //questions
 
 const quizQuestions = [ 
