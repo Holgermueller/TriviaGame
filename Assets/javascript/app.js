@@ -3,6 +3,7 @@
 const quizBody = document.getElementById('quiz');
 const resultHolder = document.getElementById('results');
 const submitButton = document.getElementById('results');
+let timeRemaining = 10;
 
 //function loadQuiz();
 //function displayResults();
@@ -10,23 +11,27 @@ const submitButton = document.getElementById('results');
 //button to begin quiz
 
 $('#begin').click(function() {
-    $('#quiz').text(`you've entered some text!`); //test works!!
+    $(this).slideUp();
+    $('#timer').text(timeRemaining);
+    //$('#quiz').text(`you've entered some text!`); //test works!!
     //$('#quiz').
     //$('#timer').
 }); //end of click function
-
 //set up timer
 
-let timeRemaining = 180;
-let gamerTimer = setInterval (function() {
+$('#begin').click(function(){
+let timeRemaining = 10;
+let gamerTimer = setInterval(function() {
     timeRemaining--;
-    document.getElementById('#timer').textContent = timeRemaining;
-    if(timeRemaining <= 0)
-       $('#timer').html(`<p>You Lose</p>`)
+    if (timeRemaining >= 0) {
+        
+    }
+    if(timeRemaining === 0) {
+       $('#timer').html(`<p>You Lose</p>`)}
+       console.log(gamerTimer);
 },1000);
-    $('#timer').html(timeRemaining);
+})
 
-console.log(timeRemaining);
 //questions
 
 const quizQuestions = [ 
