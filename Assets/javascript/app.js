@@ -3,7 +3,7 @@
 const quizBody = document.getElementById('quiz');
 const resultHolder = document.getElementById('results');
 const submitButton = document.getElementById('results');
-let timeRemaining = 10;
+let timeRemaining = 180;
 
 //function loadQuiz();
 //function displayResults();
@@ -123,9 +123,16 @@ const quizQuestions = [
         d: "H. G. Wells and Anthony West"
     },
     correctAnswer: "b" },
-
 ];
+console.log(quizQuestions[0].Question);
+console.log(quizQuestions[0].Answers);
 
+
+
+$('#begin').click(function() {
+    $('#quiz').append("Question:" + " " + quizQuestions[0].Question);
+    $('#answers').append("Answers:" + " " + quizQuestions[0].Answers);
+}); 
 
 
 //submit button
