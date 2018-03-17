@@ -19,15 +19,14 @@ $('#begin').click(function() {
 }); //end of click function
 //set up timer
 
-$('#begin').click(function(){
-let timeRemaining = 10;
+$('#begin').click(function() {
 let gamerTimer = setInterval(function() {
     timeRemaining--;
     if (timeRemaining >= 0) {
-        
+        $('#timer').text(timeRemaining);
     }
     if(timeRemaining === 0) {
-       $('#timer').html(`<p>You Lose</p>`)}
+       $('#timer').html(`<div>Time's up! You Lose!</div>`)}
        console.log(gamerTimer);
 },1000);
 })
