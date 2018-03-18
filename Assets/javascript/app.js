@@ -131,7 +131,11 @@ console.log(quizQuestions[0].Answers);
 
 $('#begin').click(function() {
     $('#quiz').append("Question:" + " " + quizQuestions[0].Question);
-    $('#answers').append("Answers:" + " " + quizQuestions[0].Answers);
+    $('#answers').append("<div>Answers:</div>");
+    $('#answers').append("<div>" + quizQuestions[0].Answers.a+"</div>");
+    $('#answers').append("<div>" + quizQuestions[0].Answers.b+"</div>");
+    $('#answers').append("<div>" + quizQuestions[0].Answers.c+"</div>");
+    $('#answers').append("<div>" + quizQuestions[0].Answers.d+"</div>");
 }); 
 
 
