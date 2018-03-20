@@ -41,7 +41,7 @@ const quizQuestions = [
           c: "1927",
           d: "1928"
       },
-      correctAnswer: "b" },
+      correctAnswer: [1] },
 
     { Question: "In Frank Herbert's Dune, what are the Shai Hulud?",
     Answers: {
@@ -50,7 +50,7 @@ const quizQuestions = [
         c: "Giant sandworms",
         d: "A guild of merchants" },
 
-    correctAnswer: "c" },
+    correctAnswer: [2] },
 
     { Question: "How many stories make up Boccaccio's Decameron?",
     Answers: {
@@ -59,7 +59,7 @@ const quizQuestions = [
         c: "Twenty stories and one framing story",
         d: "One thousand and one stories"
     },
-    correctAnswer: "b" },
+    correctAnswer: [1] },
 
     { Question: "Japanese author Kimitake Hiraoka went by which pen name?",
     Answers: {
@@ -68,7 +68,7 @@ const quizQuestions = [
         c: "Ryunosuke Akutugawa",
         d: "Junichiro Tanizaki"
     },
-    correctAnswer: "a" },
+    correctAnswer: [0] },
 
     { Question: "Eric Arthur Blair is the real name of which British author?",
     Answers: {
@@ -77,7 +77,7 @@ const quizQuestions = [
         c: "George Sand",
         d: "George Orwell"
     },
-    correctAnswer: "d" },
+    correctAnswer: [3] },
 
     { Question: "Which novel is argued to be the first work of science fiction?",
     Answers: {
@@ -86,7 +86,7 @@ const quizQuestions = [
         c: "The Invisible Man",
         d: "20,000 Leagues Under the Sea"
     },
-    correctAnswer: "a" },
+    correctAnswer: [0] },
 
     { Question: "Which American author was admitted to Columbia University on a football scholarship?",
     Answers: {
@@ -95,7 +95,7 @@ const quizQuestions = [
         c: "Philip K. Dick",
         d: "Allen Ginsberg"
     },
-    correctAnswer: "a" },
+    correctAnswer: [0] },
 
     { Question: "Which author's life has been the target of a death threat since February 14, 1989?",
     Answers: {
@@ -104,7 +104,7 @@ const quizQuestions = [
         c: "Gao Xingjian",
         d: "Nicholas Sparks"
     },
-    correctAnswer: "a" },
+    correctAnswer: [0] },
 
     { Question: "Which author owned a jazz bar before pursuing writing?",
     Answers: {
@@ -113,7 +113,7 @@ const quizQuestions = [
         c: "Haruki Murakami",
         d: "Kazuo Ishiguro"
     },
-    correctAnswer: "c" },
+    correctAnswer: [2] },
 
     { Question: "Which two authors are NOT related?",
     Answers: {
@@ -122,10 +122,10 @@ const quizQuestions = [
         c: "Alice Walker and Rebecca Walker",
         d: "H. G. Wells and Anthony West"
     },
-    correctAnswer: "b" },
+    correctAnswer: [1] },
 ];
-console.log(quizQuestions[0].Question);
-console.log(quizQuestions[0].Answers);
+//console.log(quizQuestions[0].Question);
+//console.log(quizQuestions[0].Answers);
 
 //append first question and answers to DOM when begin button clicked
 
@@ -243,7 +243,9 @@ $('#quiz8').click(function() {
 
 //collect players answers
 
+let playerAnswers = [];
 
+console.log(playerAnswers);
 
 //submit button
 
@@ -257,15 +259,31 @@ $('#submit').click(function() {
     $('#results').append("<div>Unanswered:0</div>").append("<br>");
 });
 
-//function to determine correct answers
+//function to determine correct answers and display results
 
-
-
-//display results
+function results() {
 
 let numberCorrect = 0;
 let numberWrong = 0;
 let unanswered = 0;
 
+if (playerAnswers === quizQuestions.correctAnswer) {
+    numberCorrect++
+    $('#results').text(numberCorrect);
+} else if (playerAnswers !== quizQuestions.correctAnswer) {
+    numberWrong++
+    $('#results').text(numberWrong);
+} else if (playerAnswers !== quizQuestions.correctAnswer && playerAnswers !== quizQuestions.correctAnswer) {
+    unanswered++
+    $('#results').text(unanswered);
 
+
+
+}
+
+console.log(numberCorrect);
+console.log(numberWrong);
+console.log(unanswered);
+
+}
 

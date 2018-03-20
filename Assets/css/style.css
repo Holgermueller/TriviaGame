@@ -8,6 +8,7 @@ body {
     text-align: center;
     margin-left: 14%;
     padding: 2px 0 2px;
+    font-family: 'Dancing Script', cursive;
 }
 
 .container {
@@ -22,14 +23,19 @@ body {
 .begin {
     padding: 4%;
     border-radius: 50%;
-    border: 2px solid green;
+    border: 2px solid #000001;
     margin: 2%;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2em;
 }
 
 .submit {
     padding: 4%;
     border-radius: 50%;
+    border: 2px solid #000001;
     margin: 2%;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2em;
 }
 
 .footer {
@@ -38,4 +44,5 @@ body {
     text-align: center;
     margin: 2% 0 0 14%;
     padding: 2px 0 2px;
+    font-family: 'Dancing Script', cursive;
 }
