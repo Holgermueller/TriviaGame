@@ -27,7 +27,7 @@ let gamerTimer = setInterval(function() {
     }
     if(timeRemaining === 0) {
        $('#timer').html(`<div>Time's up! You Lose!</div>`)}
-       console.log(gamerTimer);
+       //console.log(gamerTimer);
 },1000);
 })
 
@@ -141,28 +141,6 @@ $('#begin').click(function() {
 
 //display other questions
 
-function displayQuiz(){
-    const output = [];
-    quizQuestions.forEach(
-        (currentQuestion, questionNumber) => {
-            const answers = [];
-            for(letter in currentQuestion.answers) {
-                answers.push(
-                    `<label>
-                    <input type="radio" name="question${questionNumber}"
-                    value="${letter} :
-                    ${currentQuestion.answers[letter]}
-                    </label>`
-                );
-            }
-            output.push(
-                `<div class"question> ${currentQuestion.question} </div>
-                <div class = "answers"> ${answers.join('')} </div>`
-            )
-        }
-    );
-    quizBody.innerHTML = output.join('');
-}
 
 
 //collect players answers
@@ -188,4 +166,6 @@ $('#submit').click(function() {
 let numberCorrect = 0;
 let numberWrong = 0;
 let unanswered = 0;
+
+
 
