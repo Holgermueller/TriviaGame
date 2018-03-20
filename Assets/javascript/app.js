@@ -124,8 +124,9 @@ const quizQuestions = [
     },
     correctAnswer: [1] },
 ];
-//console.log(quizQuestions[0].Question);
-//console.log(quizQuestions[0].Answers);
+console.log(quizQuestions[0].Question);
+console.log(quizQuestions[0].Answers);
+console.log(quizQuestions[0].correctAnswer);
 
 //append first question and answers to DOM when begin button clicked
 
@@ -244,6 +245,10 @@ $('#quiz8').click(function() {
 //collect players answers
 
 let playerAnswers = [];
+
+$('radio').click(function(){
+    $(this).append(playerAnswers);
+});
 
 console.log(playerAnswers);
 
