@@ -2,7 +2,7 @@
 
 const quizBody = document.getElementById('quiz');
 const resultHolder = document.getElementById('results');
-const submitButton = document.getElementById('results');
+const submitButton = document.getElementById('submit');
 let timeRemaining = 180;
 
 //function loadQuiz();
@@ -127,21 +127,61 @@ const quizQuestions = [
 console.log(quizQuestions[0].Question);
 console.log(quizQuestions[0].Answers);
 
+//append first question and answers to DOM when begin button clicked
 
 
 $('#begin').click(function() {
-    $('#quiz').append("Question:" + " " + quizQuestions[0].Question);
-    $('#answers').append("<div>Answers:</div>");
-    $('#answers').append("<div>" + quizQuestions[0].Answers.a+"</div>");
-    $('#answers').append("<div>" + quizQuestions[0].Answers.b+"</div>");
-    $('#answers').append("<div>" + quizQuestions[0].Answers.c+"</div>");
-    $('#answers').append("<div>" + quizQuestions[0].Answers.d+"</div>");
-}); 
+    $('#quiz').append("Question:" + " " + quizQuestions[0].Question).append("<br>");
+    $('#answersHead').append("<div>Answers:</div>").append("<br>");
+    $('#answers').append("<div>A:" + quizQuestions[0].Answers.a+"</div>").append("<br>");
+    $('#answers').append("<div>B:" + quizQuestions[0].Answers.b+"</div>").append("<br>");
+    $('#answers').append("<div>C:" + quizQuestions[0].Answers.c+"</div>").append("<br>");
+    $('#answers').append("<div>D:" + quizQuestions[0].Answers.d+"</div>").append("<br>");
+});
+
+//display other questions
+
+function displayQuiz(){
+    const output = [];
+    quizQuestions.forEach(
+        (currentQuestion, questionNumber) => {
+            const answers = [];
+            for(letter in currentQuestion.answers) {
+                answers.push(
+                    `<label>
+                    <input type="radio" name="question${questionNumber}"
+                    value="${letter} :
+                    ${currentQuestion.answers[letter]}
+                    </label>`
+                );
+            }
+            output.push(
+                `<div class"question> ${currentQuestion.question} </div>
+                <div class = "answers"> ${answers.join('')} </div>`
+            )
+        }
+    );
+    quizBody.innerHTML = output.join('');
+}
+
+
+//collect players answers
+
 
 
 //submit button
 
+$('#submit').click(function() {
+    $(this).slideUp();
+    $('#results').append("<div>Results:</div>").append("<br>");
+    $('#results').append("<div>Correct:0</div>").append("<br>");
+    $('#results').append("<div>Incorrect:0</div>").append("<br>");
+    $('#results').append("<div>Unanswered:0</div>").append("<br>");
+});
+
 //function to determine correct answers
+
+
 
 //display results
 
