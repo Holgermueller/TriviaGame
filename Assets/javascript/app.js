@@ -32,97 +32,97 @@ let gamerTimer = setInterval(function() {
 })
 
 //questions
-
+//1
 const quizQuestions = [ 
     { Question: "In what year was Ernest Hemingway's The Sun Also Rises published?",
-      Answers: {
-          a: "1925",
-          b: "1926",
-          c: "1927",
-          d: "1928"
-      },
-      correctAnswer: '1926' },
-
+      Answers: [
+          "1925",
+          "1926",
+          "1927",
+          "1928"
+    ],
+      correctAnswer: 1 },
+//2
     { Question: "In Frank Herbert's Dune, what are the Shai Hulud?",
-    Answers: {
-        a: "Desert Nomads",
-        b: "A group of witches",
-        c: "Giant sandworms",
-        d: "A guild of merchants" },
-
-    correctAnswer: 'c' },
-
+    Answers: [
+        "Desert Nomads",
+        "A group of witches",
+        "Giant sandworms",
+        "A guild of merchants" 
+    ],
+    correctAnswer: 2 },
+//3
     { Question: "How many stories make up Boccaccio's Decameron?",
-    Answers: {
-        a: "Ten stories and one framing story",
-        b: "One hundred stories and one framing story",
-        c: "Twenty stories and one framing story",
-        d: "One thousand and one stories"
-    },
-    correctAnswer: 'b' },
-
+    Answers: [
+        "Ten stories and one framing story",
+        "One hundred stories and one framing story",
+        "Twenty stories and one framing story",
+        "One thousand and one stories"
+    ],
+    correctAnswer: 1 },
+//4
     { Question: "Japanese author Kimitake Hiraoka went by which pen name?",
-    Answers: {
-        a: "Yukio Mishima",
-        b: "Yasunari Kawabata",
-        c: "Ryunosuke Akutugawa",
-        d: "Junichiro Tanizaki"
-    },
-    correctAnswer: 'a' },
-
+    Answers: [
+        "Yukio Mishima",
+        "Yasunari Kawabata",
+        "Ryunosuke Akutugawa",
+        "Junichiro Tanizaki"
+    ],
+    correctAnswer: 0 },
+//5
     { Question: "Eric Arthur Blair is the real name of which British author?",
-    Answers: {
-        a: "Lewis Carroll",
-        b: "George Eliot",
-        c: "George Sand",
-        d: "George Orwell"
-    },
-    correctAnswer: 'd' },
-
+    Answers: [
+        "Lewis Carroll",
+        "George Eliot",
+        "George Sand",
+        "George Orwell"
+    ],
+    correctAnswer: 3 },
+//6
     { Question: "Which novel is argued to be the first work of science fiction?",
-    Answers: {
-        a: "Frankenstein",
-        b: "War of the Worlds",
-        c: "The Invisible Man",
-        d: "20,000 Leagues Under the Sea"
-    },
-    correctAnswer: 'a' },
-
+    Answers: [
+        "Frankenstein",
+        "War of the Worlds",
+        "The Invisible Man",
+        "20,000 Leagues Under the Sea"
+    ],
+    correctAnswer: 0 },
+//7
     { Question: "Which American author was admitted to Columbia University on a football scholarship?",
-    Answers: {
-        a: "Jack Kerouac",
-        b: "Ernest Hemingway",
-        c: "Philip K. Dick",
-        d: "Allen Ginsberg"
-    },
-    correctAnswer: 'a' },
-
+    Answers: [
+        "Jack Kerouac",
+        "Ernest Hemingway",
+        "Philip K. Dick",
+        "Allen Ginsberg"
+    ],
+    correctAnswer: 0 },
+//8
     { Question: "Which author's life has been the target of a death threat since February 14, 1989?",
-    Answers: {
-        a: "Salman Rushdie",
-        b: "Naguib Mahfouz",
-        c: "Gao Xingjian",
-        d: "Nicholas Sparks"
-    },
-    correctAnswer: 'a' },
-
+    Answers: [
+        "Salman Rushdie",
+        "Naguib Mahfouz",
+        "Gao Xingjian",
+        "Nicholas Sparks"
+    ],
+    correctAnswer: 0 },
+//9
     { Question: "Which author owned a jazz bar before pursuing writing?",
-    Answers: {
-        a: "J. K. Rowling",
-        b: "Anne Rice",
-        c: "Haruki Murakami",
-        d: "Kazuo Ishiguro"
-    },
-    correctAnswer: 'c' },
-
+    Answers: [
+        "J. K. Rowling",
+        "Anne Rice",
+        "Haruki Murakami",
+        "Kazuo Ishiguro"
+    ],
+    correctAnswer: 2 },
+//10
     { Question: "Which two authors are NOT related?",
-    Answers: {
-        a: "Stephen King and Joe Hill",
-        b: "Haruki Murakami and Ryu Murakami",
-        c: "Alice Walker and Rebecca Walker",
-        d: "H. G. Wells and Anthony West"
-    },
-    correctAnswer: 'b' },
+    Answers: [
+        "Stephen King and Joe Hill",
+        "Haruki Murakami and Ryu Murakami",
+        "Alice Walker and Rebecca Walker",
+        "H. G. Wells and Anthony West"
+    ],
+    correctAnswer: 1 },
 ];
 console.log(quizQuestions[0].Question);
 console.log(quizQuestions[0].Answers);
