@@ -1,5 +1,7 @@
 body {
     background-image: url("../images/pennpaper-269810.jpeg");
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .header {
@@ -7,7 +9,11 @@ body {
     background-color: bisque;
     text-align: center;
     margin-left: 10%;
-    padding: 2px 0 2px;
+}
+
+h1 {
+    padding: 8px 0;
+    font-size: 40px;
     font-family: 'Dancing Script', cursive;
 }
 
