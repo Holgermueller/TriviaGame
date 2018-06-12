@@ -130,12 +130,11 @@ console.log(quizQuestions[0].correctAnswer);
 
 //append first question and answers to DOM when begin button clicked
 
-
 $('#begin').click(function() {
     $('#quiz').append("Question:" + " " + quizQuestions[0].Question).append("<br>");
     $('#quiz').append("<br>");
     $('#quiz').append("<div>Answers:</div>").append("<br>");
-    $('#quiz').append("<input type='radio' value='" + quizQuestions[0].Answers.a + "'> A: " + quizQuestions[0].Answers.a).append("<br>");
+    $('#quiz').append("<input type='radio' value='" + quizQuestions[0].Answers.a + "'> A: " + quizQuestions[0].Answers[0]).append("<br>");
 
     //$('#quiz').append("<input type='radio' data-value=''>" + "<div>A:" + quizQuestions[0].Answers.a+"</div>").append("<br>");
     $('#quiz').append("<input type='radio' data-value=''>" + "<div>B:" + quizQuestions[0].Answers.b+"</div>").append("<br>");
@@ -307,4 +306,3 @@ console.log(numberWrong);
 console.log(unanswered);
 
 }
-
