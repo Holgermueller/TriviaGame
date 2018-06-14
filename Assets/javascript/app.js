@@ -121,51 +121,51 @@ let timer;
 
 let triviaGame = {
 
-    questions: quizQuestions,
+    quizQuestions: quizQuestions,
     presentQuestion: 0,
     timeLeft: timeRemaining,
     correct: 0,
     wrong: 0,
 
-    countdown: function() {
+    countdown: function () {
         triviaGame.timeLeft--;
-        $('#number-counter').text(triviaGame.timeLeft);
-        if (triviaGame.timeLeft === 0) {
+        $('#number-counter').text(this.timeLeft);
+        if (this.timeLeft === 0) {
             console.log("Time's up. You lose!");
-            game.timesOver();
+            this.timesOver();
         }
     },
 
-    loadQuestions: function() {
-        time = setInterval(triviaGame.timeLeft, 1000);
+    loadQuestions: function () {
+        let time = setInterval(this.timeLeft.bind(this), 1000);
         quizPanel.html("<h2>" + this.questions[this.presentQuestion].Question + "</h2>");
         for (let i = 0; i < questions[this.presentQuestion].Answers.length; i++) {
             quizPanel.append("<button class='answer-button' id='button' data-name='" + questions[this.presentQuestion].Answers[i]
-        + "'>" + questions[this.presentQuestion].Answers[i] + "</button>");
+                + "'>" + questions[this.presentQuestion].Answers[i] + "</button>");
         }
     },
 
-    onToNextQuestion: function() {
+    onToNextQuestion: function () {
         this.timeLeft = window.timeRemaining;
         $("#counter-number").text(this.timeLeft);
         this.presentQuestion++;
         this.loadQuestions.bind(this)();
     },
 
-    outOfTime: function() {
+    outOfTime: function () {
         clearInterval(window.time);
         $("#counter-number").text(this.timeLeft);
         quizPanel.html("<h2>Time's up.</h2>");
         quizPanel.append("<h3>The right answer was: " + quizQuestions[this.presentQuestion].correctAnswer);
 
-        if (this.presentQuestion === questions.length -1) {
+        if (this.presentQuestion === questions.length - 1) {
             setTimeout(this.getResults, 18 * 1000);
         } else {
             setTimeout(this.onToNextQuestion, 18 * 1000);
         }
     },
 
-    getResults: function() {
+    getResults: function () {
         clearInterval(window.time);
         quizPanel.html("<h2>It's all over. Here's how you fared!</h2>");
         $("#counter-number").text(this.countdown);
@@ -175,7 +175,7 @@ let triviaGame = {
         quizPanel.append("<h3>Unanswered: " + (questions.length - (this.wrong + this.wrong)) + "</h3>");
     },
 
-    answered: function(e) {
+    answered: function (e) {
         clearInterval(window.time);
         if ($(e.target).attr("data-name") === questions[this.presentQuestion].correctAnswer) {
             this.answeredRight();
@@ -184,48 +184,48 @@ let triviaGame = {
         }
     },
 
-    answeredWrong: function() {
+    answeredWrong: function () {
         this.wrong++;
         clearInterval(window.time);
         quizPanel.html("<h2>WRONG!!</h2>");
         quizPanel.append("<h3> The correct answer was: " + questions[this.presentQuestion].correctAnswer + "</h3>");
-        if (this.presentQuestion === questions.length -1) {
+        if (this.presentQuestion === questions.length - 1) {
             setTimeout(this.getResults.bind(this), 18 * 1000);
-        }else {
-            setTimeout(this.onToNextQuestion.bind(this), 18 *1000);
+        } else {
+            setTimeout(this.onToNextQuestion.bind(this), 18 * 1000);
         }
     },
 
-    answeredRight: function() {
+    answeredRight: function () {
         clearInterval(window.time);
         this.correct++;
         quizPanel.html("<h2>Correct!!!</h2>");
 
-        if (this.presentQuestion === questions.length -1) {
-            setTimeout(this.getResults.bind(this), 18 *1000);
+        if (this.presentQuestion === questions.length - 1) {
+            setTimeout(this.getResults.bind(this), 18 * 1000);
         } else {
             setTimeout(this.onToNextQuestion.bind(this), 3 * 1000);
         }
     },
 
-    reset: function() {
+    reset: function () {
         this.presentQuestion = 0;
         this.timeLeft = timeRemaining;
         this.correct = 0;
         this.wrong = 0;
         this.loadQuestions();
     }
-//end of trivia game variable
+    //end of trivia game variable
 };
 
 //click handlers
-$(document).on("click", "#start-over", game.reset.bind(game));
+$(document).on("click", "#start-over", triviaGame.reset.bind(triviaGame));
 
-$(document).on("click", ".answer-button", function(e) {
-    game.answered.bind(game, e)();
+$(document).on("click", ".answer-button", function (e) {
+    triviaGame.answered.bind(triviaGame, e)();
 });
 
-$(document).on("click", "#start", function(){
+$(document).on("click", "#start", function () {
     $("#wrapperTwo").prepend("<h2>Time Left: <span id='counter-number'>180</span>Seconds</h2>");
-    game.loadQuestions.bind(game)();
+    triviaGame.loadQuestions.bind(triviaGame)();
 });
