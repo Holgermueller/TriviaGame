@@ -173,7 +173,48 @@ let triviaGame = {
         quizPanel.append("<h3>Correct Answers: " + this.correct + "</h3>");
         quizPanel.append("<h3>Wrong Answers: " + this.wrong + "</h3>");
         quizPanel.append("<h3>Unanswered: " + (questions.length - (this.wrong + this.wrong)) + "</h3>");
-    }
+    },
 
+    answered: function(e) {
+        clearInterval(window.time);
+        if ($(e.target).attr("data-name") === questions[this.presentQuestion].correctAnswer) {
+            this.answeredRight();
+        } else {
+            this.answeredWrong();
+        }
+    },
+
+    answeredWrong: function() {
+        this.wrong++;
+        clearInterval(window.time);
+        quizPanel.html("<h2>WRONG!!</h2>");
+        quizPanel.append("<h3> The correct answer was: " + questions[this.presentQuestion].correctAnswer + "</h3>");
+        if (this.presentQuestion === questions.length -1) {
+            setTimeout(this.getResults.bind(this), 18 * 1000);
+        }else {
+            setTimeout(this.onToNextQuestion.bind(this), 18 *1000);
+        }
+    },
+
+    answeredRight: function() {
+        clearInterval(window.time);
+        this.correct++;
+        quizPanel.html("<h2>Correct!!!</h2>");
+
+        if (this.presentQuestion === questions.length -1) {
+            setTimeout(this.getResults.bind(this), 18 *1000);
+        } else {
+            setTimeout(this.onToNextQuestion.bind(this), 3 * 1000);
+        }
+    },
+
+    reset: function() {
+        this.presentQuestion = 0;
+        this.timeLeft = timeRemaining;
+        this.correct = 0;
+        this.wrong = 0;
+        this.loadQuestions();
+    }
 //end of trivia game variable
-}
+};
+
