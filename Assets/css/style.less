@@ -1,26 +1,82 @@
 //color palette
+@background-color: antiquewhite;
+//fonts
+@mainfont: 'Dancing Script', cursive;
 
 
 //global
 body {
     background-image: url('../images/pennpaper-269810.jpeg');
     text-align: center;
+    background-size: cover;
 }
 
 //header
-.name {
-    background: antiquewhite;
-    margin-top: 2%;
+h1 {
+    font-family: @mainfont;
+    font-size: 3em;
+    padding: 2px;
 }
 
-#start {
+h2, h3 {
+    padding: 8px;
+}
+
+.p-style {
+    font-family: @mainfont;
+    font-size: 1.5em;
+}
+
+.wrong, .correct {
+    font-family: @mainfont;
+    font-size: 2.5em;
+}
+
+.name {
+    background: @background-color;
+    margin-top: 2%;
+    width: 48%;
+    margin-left: 28%;
+}
+
+.quiz-wrapper {
+    margin-top: 3%;
+    background: @background-color;
+    padding: 5px;
+    width: 85%;
+    margin-left: 8%;
+}
+
+.timer {
+    font-family: @mainfont;
+    font-size: 1.5em;
+}
+
+.start {
     margin-top: 10%;
-    background: pink;
-    border: 2px solid blue;
+    background: #EDBB99;
+    border: 2px solid #E59866;
+    border-radius: 50%;
+    width: 20%;
+    font-family: @mainfont;
+    font-size: 1.5em;
+}
+
+button:hover {
+    background: ghostwhite;
+}
+
+.answer-button {
+    display: block;
+    margin: 3px 0 3px 49%;
 }
 
 //footer
 .footer {
-    background-color: antiquewhite;
+    background-color: @background-color;
     margin-top: 2%;
+    font-family: @mainfont;
+    padding: 2px;
+    width: 33%;
+    margin-left: 36%;
 }

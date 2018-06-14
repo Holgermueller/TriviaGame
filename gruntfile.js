@@ -15,7 +15,8 @@ module.exports = function(grunt){
             files: ['assets/**/*.less'],
             tasks: ['less'],
             options: {
-                nospawn: true,
+                spawn: false,
+                reload: true,
                 livereload: true
             }
         }

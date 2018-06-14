@@ -187,7 +187,7 @@ let triviaGame = {
     answeredWrong: function () {
         this.wrong++;
         clearInterval(window.time);
-        quizPanel.html("<h2>WRONG!!</h2>");
+        quizPanel.html("<h2 class='wrong'>WRONG!!</h2>");
         quizPanel.append("<h3> The correct answer was: " + quizQuestions[this.presentQuestion].correctAnswer + "</h3>");
         if (this.presentQuestion === quizQuestions.length - 1) {
             setTimeout(this.getResults.bind(this), 3 * 1000);
@@ -199,7 +199,7 @@ let triviaGame = {
     answeredRight: function () {
         clearInterval(window.time);
         this.correct++;
-        quizPanel.html("<h2>Correct!!!</h2>");
+        quizPanel.html("<h2 class='correct'>Correct!!!</h2>");
 
         if (this.presentQuestion === quizQuestions.length - 1) {
             setTimeout(this.getResults.bind(this), 3 * 1000);
@@ -226,6 +226,6 @@ $(document).on("click", ".answer-button", function (e) {
 });
 
 $(document).on("click", "#start", function () {
-    $("#wrapperTwo").prepend("<h2>Time Left: <span id='counter-number'>180</span>Seconds</h2>");
+    $("#wrapperTwo").prepend("<h2 class='timer'>Time Left: <span id='counter-number'>180</span> Seconds</h2>");
     triviaGame.loadQuestions.bind(triviaGame)();
 });
