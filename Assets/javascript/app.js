@@ -218,3 +218,14 @@ let triviaGame = {
 //end of trivia game variable
 };
 
+//click handlers
+$(document).on("click", "#start-over", game.reset.bind(game));
+
+$(document).on("click", ".answer-button", function(e) {
+    game.answered.bind(game, e)();
+});
+
+$(document).on("click", "#start", function(){
+    $("#wrapperTwo").prepend("<h2>Time Left: <span id='counter-number'>180</span>Seconds</h2>");
+    game.loadQuestions.bind(game)();
+});
