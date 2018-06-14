@@ -121,7 +121,7 @@ let timer;
 
 let triviaGame = {
 
-    questions: questions,
+    questions: quizQuestions,
     presentQuestion: 0,
     timeLeft: timeRemaining,
     correct: 0,
@@ -156,7 +156,24 @@ let triviaGame = {
         clearInterval(window.time);
         $("#counter-number").text(this.timeLeft);
         quizPanel.html("<h2>Time's up.</h2>");
-        quizPanel.append();
+        quizPanel.append("<h3>The right answer was: " + quizQuestions[this.presentQuestion].correctAnswer);
+
+        if (this.presentQuestion === questions.length -1) {
+            setTimeout(this.getResults, 18 * 1000);
+        } else {
+            setTimeout(this.onToNextQuestion, 18 * 1000);
+        }
+    },
+
+    getResults: function() {
+        clearInterval(window.time);
+        quizPanel.html("<h2>It's all over. Here's how you fared!</h2>");
+        $("#counter-number").text(this.countdown);
+
+        quizPanel.append("<h3>Correct Answers: " + this.correct + "</h3>");
+        quizPanel.append("<h3>Wrong Answers: " + this.wrong + "</h3>");
+        quizPanel.append("<h3>Unanswered: " + (questions.length - (this.wrong + this.wrong)) + "</h3>");
     }
 
+//end of trivia game variable
 }
