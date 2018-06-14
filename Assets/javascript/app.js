@@ -14,7 +14,7 @@ const quizQuestions = [
             "1927",
             "1928"
         ],
-        correctAnswer: 1
+        correctAnswer: "1926"
     },
     //2
     {
@@ -25,7 +25,7 @@ const quizQuestions = [
             "Giant sandworms",
             "A guild of merchants"
         ],
-        correctAnswer: 2
+        correctAnswer: "Giant sandworms"
     },
     //3
     {
@@ -36,7 +36,7 @@ const quizQuestions = [
             "Twenty stories and one framing story",
             "One thousand and one stories"
         ],
-        correctAnswer: 1
+        correctAnswer: "One hundred stories and one framing story"
     },
     //4
     {
@@ -47,7 +47,7 @@ const quizQuestions = [
             "Ryunosuke Akutugawa",
             "Junichiro Tanizaki"
         ],
-        correctAnswer: 0
+        correctAnswer: "Yukio Mishima"
     },
     //5
     {
@@ -58,7 +58,7 @@ const quizQuestions = [
             "George Sand",
             "George Orwell"
         ],
-        correctAnswer: 3
+        correctAnswer: "George Orwell"
     },
     //6
     {
@@ -69,7 +69,7 @@ const quizQuestions = [
             "The Invisible Man",
             "20,000 Leagues Under the Sea"
         ],
-        correctAnswer: 0
+        correctAnswer: "Frankenstein"
     },
     //7
     {
@@ -80,7 +80,7 @@ const quizQuestions = [
             "Philip K. Dick",
             "Allen Ginsberg"
         ],
-        correctAnswer: 0
+        correctAnswer: "Jack Kerouac"
     },
     //8
     {
@@ -91,7 +91,7 @@ const quizQuestions = [
             "Gao Xingjian",
             "Nicholas Sparks"
         ],
-        correctAnswer: 0
+        correctAnswer: "Salman Rushdie"
     },
     //9
     {
@@ -102,7 +102,7 @@ const quizQuestions = [
             "Haruki Murakami",
             "Kazuo Ishiguro"
         ],
-        correctAnswer: 2
+        correctAnswer: "Haruki Murakami"
     },
     //10
     {
@@ -113,7 +113,7 @@ const quizQuestions = [
             "Alice Walker and Rebecca Walker",
             "H. G. Wells and Anthony West"
         ],
-        correctAnswer: 1
+        correctAnswer: "Haruki Murakami and Ryu Murakami"
     },
 ];
 
@@ -172,7 +172,7 @@ let triviaGame = {
 
         quizPanel.append("<h3>Correct Answers: " + this.correct + "</h3>");
         quizPanel.append("<h3>Wrong Answers: " + this.wrong + "</h3>");
-        quizPanel.append("<h3>Unanswered: " + (quizQuestions.length - (this.wrong + this.wrong)) + "</h3>");
+        quizPanel.append("<h3>Unanswered: " + (quizQuestions.length - (this.wrong + this.correct)) + "</h3>");
     },
 
     answered: function (e) {
